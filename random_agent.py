@@ -3,8 +3,9 @@ import gym
 
 class RandomAgent:
 
-    def __init__(self, env_name):
-        self.env = gym.make(env_name)
+    def __init__(self, env):
+        self.action_space = env.action_space
 
-    def predict(self):
-        return self.env.action_space.sample()
+    def predict(self, obs, state=None, mask=None, deterministic=None):
+        return self.action_space.sample(), None
+        # random action from the action space
