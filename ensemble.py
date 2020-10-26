@@ -25,7 +25,7 @@ class Ensemble:
             action_tuple = tuple(action.tolist())  # arrays cant be keys
             states[action_tuple] = _state
             if self.method == "weighted":
-                predictions[action_tuple] += 1*self.weights[model]
+                predictions[action_tuple] += self.weights[model]
             else:
                 predictions[action_tuple] += 1
 
