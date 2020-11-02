@@ -46,6 +46,7 @@ if __name__ == '__main__':
     print(rewards.keys())
 
     plt.style.use("fivethirtyeight")
+
     # https://python-graph-gallery.com/11-grouped-barplot/
     width = 0.25
     r = list()
@@ -58,11 +59,13 @@ if __name__ == '__main__':
 
     # Add xticks on the middle of the group bars
     plt.title("Mean Reward Comparison")
-    #plt.xlabel("Algorithm")
+    # plt.xlabel("Algorithm")
     plt.xticks([r_ + width for r_ in range(len(algos))], algos)
 
-    # Create legend & Show graphic
-    plt.legend()
+    # box = ax.get_position()
+
+    # ax.set_position([box.x0, box.y0, box.width * 0.8, box.height])
+    plt.legend(loc='upper right', fontsize='x-small')
     plt.show()
 
     # mean_reward_DQN, std_reward_DQN = evaluate_policy(model_DQN, env=env_pacman, n_eval_episodes=100)
