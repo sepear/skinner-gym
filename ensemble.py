@@ -32,3 +32,7 @@ class Ensemble:
         max_voted = max(predictions, key=predictions.get)
         state_voted = states[max_voted]
         return np.asarray(max_voted), state_voted
+
+#Examples
+#model_Ensemble = Ensemble(models={model_DQN, model_PPO2, model_A2C}, env=env_pacman)
+#model_weighted_Ensemble = Ensemble(models={model_DQN, model_PPO2, model_A2C}, method="weighted", env=env_pacman)
